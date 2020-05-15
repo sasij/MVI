@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:padding="16dp"
+  tools:context=".view.MainView">
+
+  <TextView
+    android:id="@+id/btc_textview"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="25dp"
+    android:paddingStart="2dp"
+    android:text="BTC price:"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+    android:id="@+id/btc_current_price_textview"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:textSize="16sp"
+    app:layout_constraintBottom_toBottomOf="@id/btc_textview"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@id/btc_textview"
+    tools:text="9600$" />
+
+  <TextView
+    android:id="@+id/your_balance_label"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="50dp"
+    android:paddingStart="2dp"
+    android:text="Your Balance"
+    android:textSize="16sp"
+    android:textStyle="bold"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/btc_current_price_textview" />
+
+  <EditText
+    android:id="@+id/value"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:hint="0.55"
+    app:layout_constraintEnd_toStartOf="@id/result"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/your_balance_label" />
+
+  <TextView
+    android:id="@+id/result"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:text="5000$"
+    android:textSize="16sp"
+    app:layout_constraintBottom_toBottomOf="@id/value"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/your_balance_label" />
+
+
+  <Button
+    android:id="@+id/button1"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="50dp"
+    android:padding="16dp"
+    android:text="Get Price"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/value" />
+
+  <Button
+    android:id="@+id/button2"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:padding="16dp"
+    android:text="Calculate"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/button1" />
+
+
+  <Button
+    android:id="@+id/button3"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:padding="16dp"
+    android:text="throw ERROR"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/button2" />
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/error_wrapper"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ccc"
+    android:padding="16dp"
+    app:layout_constraintBottom_toBottomOf="parent ">
+
+    <TextView
+      android:id="@+id/error"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:textColor="@color/colorPrimary"
+      android:visibility="visible"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@id/dismiss_error"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="Any error happened!!" />
+
+    <TextView
+      android:id="@+id/dismiss_error"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="9dp"
+      android:text="HIDE"
+      android:textColor="@color/colorPrimary"
+      android:visibility="visible"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <ProgressBar
+    android:id="@+id/loading"
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:layout_marginStart="50dp"
+    app:layout_constraintBottom_toBottomOf="@id/btc_textview"
+    app:layout_constraintStart_toEndOf="@id/btc_textview"
+    app:layout_constraintTop_toTopOf="@id/btc_textview" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
