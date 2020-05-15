@@ -1,6 +1,6 @@
-# MVI
-Simple Model View Intent example using Kotlin
+# Model View Intent - MVI
 
+Reactive and simple Model View Intent example using Kotlin and RxJava. Use a BehaviourSubject to save your State when your app rotates.
 
 
 ### Example of Action
