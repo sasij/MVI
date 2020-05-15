@@ -64,6 +64,19 @@ object Reducer {
     }
 }
 ```
+### How can you send actions?
+
+```kotlin
+store.getDispatch(
+   GetBTCPrice(Service())
+)
+```
+
+### How can you listen for changes?
+
+```kotlin
+disposable = store.changes().subscribe { render(it) }
+```
 
 ### Why you should use MVI?
 * Unidirectional flow
